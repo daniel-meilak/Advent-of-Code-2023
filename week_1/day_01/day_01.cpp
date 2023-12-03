@@ -4,6 +4,7 @@
 #include<string_view>
 #include<unordered_map>
 #include<vector>
+#include"math_func.h"
 #include"utils.h"
 
 std::unordered_map<std::string_view, int> digitMap = {
@@ -20,7 +21,7 @@ std::unordered_map<std::string_view, int> digitMap = {
 
 std::vector<std::string_view> numbers = {"one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
 
-bool isDigit(const char c);
+bool is_digit(const char c);
 int findSpelledDigit(std::string::const_iterator it);
 int findSpelledDigit(std::string::const_reverse_iterator it);
 int findAllDigits(const std::string& line);
@@ -36,8 +37,8 @@ int main(){
     for (auto &line : input){
         
         // first & last digit
-        int first = *std::find_if(line.begin(), line.end(), isDigit) - '0';
-        int last  = *std::find_if(line.rbegin(), line.rend(), isDigit) - '0';
+        int first = *std::find_if(line.begin(), line.end(), is_digit) - '0';
+        int last  = *std::find_if(line.rbegin(), line.rend(), is_digit) - '0';
 
         part1 += first * 10 + last;
 
@@ -53,7 +54,7 @@ int main(){
 }
 
 // custom isDigit that doesn't need unsigned char conversion like the std
-bool isDigit(const char c){
+bool is_digit(const char c){
     return c >= '1' && c <= '9';
 }
 
@@ -85,7 +86,7 @@ int findAllDigits(const std::string& line){
     int first{0}, last{0};
 
     for (auto it = line.begin(); it != line.end(); ++it){
-        if (isDigit(*it)){
+        if (is_digit(*it)){
             first = *it - '0';
             break;
         }
@@ -95,7 +96,7 @@ int findAllDigits(const std::string& line){
     }
 
     for (auto it = line.rbegin(); it != line.rend(); ++it){
-        if (isDigit(*it)){
+        if (is_digit(*it)){
             last = *it - '0';
             break;
         }
