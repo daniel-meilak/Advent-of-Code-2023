@@ -4,7 +4,7 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/home/atila/Documents/AoC/AoC22/**"
+                "/home/atila/Documents/AoC/AoC23/**"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",
