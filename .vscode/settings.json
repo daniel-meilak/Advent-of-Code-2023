@@ -1,5 +1,7 @@
 {
    "files.associations": {
+      "*.ts": "xml",
+      "*.defs": "shellscript",
       "*.gpl": "gnuplot",
       "array": "cpp",
       "atomic": "cpp",
@@ -60,7 +62,9 @@
       "complex": "cpp",
       "iomanip": "cpp",
       "climits": "cpp",
-      "bitset": "cpp"
+      "bitset": "cpp",
+      "cstring": "cpp",
+      "cinttypes": "cpp"
    },
    "C_Cpp.errorSquiggles": "disabled"
 }
